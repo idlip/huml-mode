@@ -1,0 +1,25 @@
+#+title: huml-mode
+
+An Emacs major mode for [[https://huml.io][HUML]] 0.2.0.
+
+* Install
+
+#+begin_src emacs-lisp
+(use-package huml-mode
+  :vc (:url "https://github.com/idlip/huml-mode"))
+#+end_src
+
+* Features
+
+- Highlighting with the standard =font-lock-*-face= faces, so any emacs theme applies.
+- Multi-line strings (=""" ... """=) in the syntax table, so a quote or a =#= inside one is plain text.
+- Indentation of two spaces per level. =TAB= steps a line through the valid levels.
+- =C-M-\= (=indent-region=) formats the region: it fixes the indentation and the spacing. Use =C-x h= first to format the whole file.
+- =C-c C-l= starts a list item. With =C-u= it starts a =- ::= item.
+- Comment commands, defun navigation, Imenu and =outline-minor-mode= over keys.
+- A Flymake backend for the spacing, indentation and escape rules. Turn it on with =M-x flymake-mode=.
+
+* Known limits
+
+- A comment after an opening =""" = is shown and treated as part of the string.
+- A multi-line string that is the whole document is not recognized.

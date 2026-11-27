@@ -1,0 +1,110 @@
+Name: Well-formed document is unchanged
+
+=-=
+%HUML v0.2.0
+# A comment
+app::
+  name: "demo"
+  contacts::
+    - ::
+      type: "admin"
+      tags:: "a", "b"
+    - ::
+      type: "support"
+  note: """
+      keep   this
+   and this
+  """
+  retries: 5
+other: true
+=-=-=
+
+Name: Odd indentation is rounded up
+
+=-=
+a::
+   b: 1
+=-=
+a::
+  b: 1
+=-=-=
+
+Name: One space of indentation is a child
+
+=-=
+a::
+ b: 1
+=-=
+a::
+  b: 1
+=-=-=
+
+Name: Spacing is fixed
+
+=-=
+"k"  :   1
+x::   1 ,2
+-   3
+y:1 #note
+=-=
+"k": 1
+x:: 1, 2
+- 3
+y: 1 # note
+=-=-=
+
+Name: Over-indentation is held to the deepest valid level
+
+=-=
+a: 1
+    b: 2
+=-=
+a: 1
+b: 2
+=-=-=
+
+Name: A comment line follows the line of code before it
+
+=-=
+a::
+      # about b
+  b: 1
+=-=
+a::
+  # about b
+  b: 1
+=-=-=
+
+Name: Multi-line string body is content
+
+=-=
+a::
+  text: """
+        indented    
+ shallow
+
+  """
+=-=
+a::
+  text: """
+        indented    
+ shallow
+
+  """
+=-=-=
+
+Name: An over-indented multi-line string moves as a whole
+
+=-=
+a: 1
+  t: """
+    x
+  """
+b: 2
+=-=
+a: 1
+t: """
+  x
+"""
+b: 2
+=-=-=

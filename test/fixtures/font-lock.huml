@@ -1,0 +1,52 @@
+%HUML v0.2.0
+# ^ font-lock-constant-face
+# Run M-x describe-text-properties
+# A comment line
+# ^ font-lock-comment-face
+name: "value" # trailing
+# <- font-lock-property-use-face
+#   ^ font-lock-delimiter-face
+#      ^ font-lock-string-face
+#               ^ font-lock-comment-face
+count: 1_000
+#      ^ font-lock-number-face
+float: -0.5e3
+#      ^ font-lock-number-face
+hex: 0xCAFE
+#    ^ font-lock-number-face
+infinity: +inf
+#         ^ font-lock-number-face
+flag: true
+#     ^ font-lock-constant-face
+nothing: null
+#        ^ font-lock-constant-face
+empty:: []
+#    ^ font-lock-delimiter-face
+#       ^ font-lock-constant-face
+"quoted key": 1
+# ^ font-lock-property-use-face
+#           ^ font-lock-delimiter-face
+list::
+  - "a\tb"
+# ^ font-lock-delimiter-face
+#    ^ font-lock-string-face
+#     ^ font-lock-escape-face
+  - "hello"
+  - :: x: 10, y: 20
+# ^ font-lock-delimiter-face
+#    ^ font-lock-delimiter-face
+#      ^ font-lock-property-use-face
+#          ^ font-lock-number-face
+#           ^ font-lock-delimiter-face
+text: """
+  inner: 1
+"""
+# <- font-lock-string-face
+after: 1
+# <- font-lock-property-use-face
+tiny: 1e-5
+#     ^ font-lock-number-face
+neg:: -inf, 2
+#     ^ font-lock-number-face
+esc: "q\"r\\s"
+#      ^ font-lock-escape-face
