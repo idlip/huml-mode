@@ -1,0 +1,12 @@
+#+title: News
+
+* 0.1.0
+
+First release.
+
+- New major mode =huml-mode= for =.huml= files.
+- Highlighting, multi-line string syntax, indentation and comment commands.
+- =indent-region= (=C-M-\=) fixes spacing and indentation.
+- New command =huml-insert-list-item= (=C-c C-l=).
+- Defun navigation, Imenu and outline support.
+- New Flymake backend =huml-flymake= for spacing, indentation and escape errors.
